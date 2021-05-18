@@ -1,0 +1,21 @@
+#----------DATABASE----------
+
+CREATE DATABASE hostel_db;
+USE hostel_db;
+
+
+#----------TABLES-----------
+
+
+CREATE TABLE if not exists users(username VARCHAR(255) NOT NULL PRIMARY KEY, email VARCHAR(255),password VARCHAR(255),name VARCHAR(255),rollno TEXT(50),branch VARCHAR(255),hostelname VARCHAR(255),roomno VARCHAR(255),mobileno TEXT(100));
+
+CREATE TABLE if not exists complaints(complaint_id INT PRIMARY KEY AUTO_INCREMENT, username VARCHAR(255), subject TEXT,category TEXT,time_of_availability VARCHAR(255),details text,complain_status VARCHAR(255) default 'pending', urgency TEXT, FOREIGN KEY (username) REFERENCES users(username));
+
+CREATE TABLE if not exists suggetions(suggetion_id INT PRIMARY KEY AUTO_INCREMENT, username VARCHAR(255), subject TEXT,details text,FOREIGN KEY (username) REFERENCES users(username));
+
+
+CREATE TABLE if not exists notification(notification_id INT PRIMARY KEY AUTO_INCREMENT, title VARCHAR(255), url TEXT,showonhome VARCHAR(255) default 'yes');
+
+CREATE TABLE if not exists event(event_id INT PRIMARY KEY AUTO_INCREMENT, title VARCHAR(255),showonhome VARCHAR(255) default 'yes');
+
+
