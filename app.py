@@ -9,7 +9,7 @@ from PIL import Image
 app=Flask(__name__)
 app.config['MYSQL_HOST'] = '127.0.0.1'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Devyash2@'
+app.config['MYSQL_PASSWORD'] = 'qwerty2@'
 app.config['MYSQL_DB'] = 'hostel_db'
 mysql=MySQL(app)
 
